@@ -45879,7 +45879,8 @@ export const bangs = [
     s: "Google Translate",
     sc: "Google",
     t: "gt",
-    u: "https://translate.google.com/#auto/en/{{{s}}}",
+    u: "https://translate.google.com/?sl=en&tl=de&text={{s}}&op=translate",
+    // u: "https://translate.google.com/#auto/en/{{{s}}}",
   },
   {
     c: "Translation",

@@ -17,11 +17,14 @@ function noSearchDefaultPageRender() {
           </ul>
         </div>
         <div class="url-container">
-          <input
-            type="text"
-            class="url-input"
-            value="https://unduck.link?q=%s"
-          />
+          <form method="GET" id="search-form">
+            <input
+              type="text"
+              class="url-input"
+              id="search-input"
+              name="q"
+            />
+          <form />
           <button class="copy-button">
             <img src="/clipboard.svg" alt="Copy" />
           </button>
@@ -40,9 +43,20 @@ function noSearchDefaultPageRender() {
   const copyButton = app.querySelector<HTMLButtonElement>(".copy-button")!;
   const copyIcon = copyButton.querySelector("img")!;
   const urlInput = app.querySelector<HTMLInputElement>(".url-input")!;
+  const form = app.querySelector<HTMLFormElement>('#search-form')!;
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const searchTerms = urlInput.value;
+    if (searchTerms){
+      console.log('hi');
+      form.action = `https://search.helbling.uk?q=${searchTerms}`;
+      form.submit();
+    }
+  })
 
   copyButton.addEventListener("click", async () => {
-    await navigator.clipboard.writeText(urlInput.value);
+    await navigator.clipboard.writeText('https://search.helbling.uk?q=%s');
     copyIcon.src = "/clipboard-check.svg";
 
     setTimeout(() => {
