@@ -22,12 +22,12 @@ function noSearchDefaultPageRender() {
           <table style="width: 100%;">
             <tbody>
               <tr>
-                <td>!t3</td>
+                <td>!ai</td>
                 <td >T3 Chat</td>
               </tr>
               <tr>
-                <td>!r</td>
-                <td>Reddit</td>
+                <td>!yt</td>
+                <td>Youtube</td>
               </tr>
               <tr>
                 <td>!gi</td>
@@ -40,6 +40,10 @@ function noSearchDefaultPageRender() {
               <tr>
                 <td>!gn</td>
                 <td>Google News</td>
+              </tr>
+              <tr>
+                <td>!gm</td>
+                <td>Google Maps</td>
               </tr>
             </tbody>
           </table>
