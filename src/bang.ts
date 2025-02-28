@@ -2,6 +2,9 @@
 
 export const bangs = [
   {
+    t: "ddg",
+    u: "https://duckduckgo.com/?q={{{s}}}",
+  },{
     t: "ai",
     u: "https://www.t3.chat/new?q={{{s}}}",
   },
