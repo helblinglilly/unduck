@@ -26,6 +26,10 @@ export const bangs = [
     u: "https://www.google.com/search?q={{{s}}}&tbm=nws",
   },
   {
+    t: "gm",
+    u: "https://www.google.com/maps?q={{{s}}}",
+  },
+  {
     t: "r",
     u: "https://www.reddit.com/search/?q={{{s}}}",
   },
