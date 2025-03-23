@@ -36,4 +36,8 @@ export const bangs = [
     t: "r",
     u: "https://www.reddit.com/search/?q={{{s}}}",
   },
+  {
+    t: "gh",
+    u: "https://github.com/search/?q={{{s}}}&type=repositories",
+  },
 ];
