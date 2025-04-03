@@ -45,6 +45,18 @@ function noSearchDefaultPageRender() {
                 <td>!gm</td>
                 <td>Google Maps</td>
               </tr>
+              <tr>
+                <td>!r</td>
+                <td>Reddit</td>
+              </tr>
+              <tr>
+                <td>!gh</td>
+                <td>Github</td>
+              </tr>
+              <tr>
+                <td>!npm</td>
+                <td>npm</td>
+              </tr>
             </tbody>
           </table>
         </div>

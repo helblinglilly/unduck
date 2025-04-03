@@ -1,5 +1,3 @@
-// This file was (mostly) ripped from https://duckduckgo.com/bang.js
-
 export const bangs = [
   {
     t: "ddg",
@@ -40,4 +38,8 @@ export const bangs = [
     t: "gh",
     u: "https://github.com/search/?q={{{s}}}&type=repositories",
   },
+  {
+    t: "npm",
+    u: "https://www.npmjs.com/search?q={{{s}}}"
+  }
 ];
