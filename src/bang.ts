@@ -12,7 +12,7 @@ export const bangs = [
   },
   {
     t: "g",
-    u: "https://www.google.com/search?q={{{s}}}",
+    u: "https://google.gprivate.com/search.php?search?q={{{s}}}"
   },
   {
     t: "gi",
