@@ -12,7 +12,7 @@ export const bangs = [
   },
   {
     t: "g",
-    u: "https://google.gprivate.com/search.php?search?q={{{s}}}"
+    u: "https://google.com/search?q={{{s}}}"
   },
   {
     t: "gi",
@@ -20,7 +20,7 @@ export const bangs = [
   },
   {
     t: "gt",
-    u: "https://www.translate.google.com/?sl=en&tl=de&text={{{s}}}&op=translate",
+    u: "https://translate.google.com/?sl=de&tl=en&text={{{s}}}&op=translate",
   },
   {
     t: "gn",
