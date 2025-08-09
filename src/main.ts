@@ -26,6 +26,14 @@ function noSearchDefaultPageRender() {
                 <td >T3 Chat</td>
               </tr>
               <tr>
+                <td>!gpt</td>
+                <td>Chat GPT</td>
+              </tr>
+              <tr>
+                <td>!claude</td>
+                <td>Claude</td>
+              </tr>
+              <tr>
                 <td>!yt</td>
                 <td>Youtube</td>
               </tr>

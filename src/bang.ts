@@ -7,6 +7,14 @@ export const bangs = [
     searchUrl: "https://www.t3.chat/new?q={{{s}}}",
   },
   {
+    bang: "gpt",
+    searchUrl: "https://www.chatgpt.com/?q={{{s}}}"
+  },
+  {
+    bang: "claude",
+    searchUrl: "https://claude.ai/new?q={{{s}}}"
+  },
+  {
     bang: "yt",
     searchUrl: "https://www.youtube.com/results?search_query={{{s}}}",
   },
