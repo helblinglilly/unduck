@@ -54,6 +54,10 @@ function noSearchDefaultPageRender() {
                 <td>Github</td>
               </tr>
               <tr>
+                <td>!gl</td>
+                <td>Gitlab: Set gl-host in localstorage to hostname</td>
+              </tr>
+              <tr>
                 <td>!npm</td>
                 <td>npm</td>
               </tr>
@@ -83,7 +87,7 @@ function noSearchDefaultPageRender() {
 }
 
 const LS_DEFAULT_BANG = localStorage.getItem("default-bang") ?? "ddg";
-const defaultBang = bangs.find((b) => b.t === LS_DEFAULT_BANG);
+const defaultBang = bangs.find((b) => b.bang === LS_DEFAULT_BANG);
 
 function getBangredirectUrl() {
   const url = new URL(window.location.href);
@@ -92,20 +96,27 @@ function getBangredirectUrl() {
     noSearchDefaultPageRender();
     return null;
   }
-
   const match = query.match(/!(\S+)/i);
 
   const bangCandidate = match?.[1]?.toLowerCase();
-  const selectedBang = bangs.find((b) => b.t === bangCandidate) ?? defaultBang;
+  const selectedBang = (bangs.find((b) => b.bang === bangCandidate) ?? defaultBang)!
 
   // Remove the first bang from the query
   const cleanQuery = query.replace(/!\S+\s*/i, "").trim();
 
-  // Format of the url is:
+  // Allow for host to be customised
+  if (selectedBang.searchUrl.includes('{{{h}}}')){
+    const host = localStorage.getItem(`${selectedBang.bang}-host`);
+    if (!host){
+      noSearchDefaultPageRender();
+      return null;
+    }
+    selectedBang.searchUrl = selectedBang.searchUrl.replace('{{{h}}}', host);
+  }
+
   // https://www.google.com/search?q={{{s}}}
-  const searchUrl = selectedBang?.u.replace(
+  const searchUrl = selectedBang.searchUrl.replace(
     "{{{s}}}",
-    // Replace %2F with / to fix formats like "!ghr+t3dotgg/unduck"
     encodeURIComponent(cleanQuery).replace(/%2F/g, "/")
   );
   if (!searchUrl) return null;

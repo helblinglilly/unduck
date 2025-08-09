@@ -1,45 +1,49 @@
 export const bangs = [
   {
-    t: "ddg",
-    u: "https://duckduckgo.com/?q={{{s}}}",
+    bang: "ddg",
+    searchUrl: "https://duckduckgo.com/?q={{{s}}}",
   },{
-    t: "ai",
-    u: "https://www.t3.chat/new?q={{{s}}}",
+    bang: "ai",
+    searchUrl: "https://www.t3.chat/new?q={{{s}}}",
   },
   {
-    t: "yt",
-    u: "https://www.youtube.com/results?search_query={{{s}}}",
+    bang: "yt",
+    searchUrl: "https://www.youtube.com/results?search_query={{{s}}}",
   },
   {
-    t: "g",
-    u: "https://google.com/search?q={{{s}}}"
+    bang: "g",
+    searchUrl: "https://google.com/search?q={{{s}}}"
   },
   {
-    t: "gi",
-    u: "https://www.google.com/search?q={{{s}}}&udm=2",
+    bang: "gi",
+    searchUrl: "https://www.google.com/search?q={{{s}}}&udm=2",
   },
   {
-    t: "gt",
-    u: "https://translate.google.com/?sl=de&tl=en&text={{{s}}}&op=translate",
+    bang: "gt",
+    searchUrl: "https://translate.google.com/?sl=de&tl=en&text={{{s}}}&op=translate",
   },
   {
-    t: "gn",
-    u: "https://www.google.com/search?q={{{s}}}&tbm=nws",
+    bang: "gn",
+    searchUrl: "https://www.google.com/search?q={{{s}}}&tbm=nws",
   },
   {
-    t: "gm",
-    u: "https://www.google.com/maps?q={{{s}}}",
+    bang: "gm",
+    searchUrl: "https://www.google.com/maps?q={{{s}}}",
   },
   {
-    t: "r",
-    u: "https://www.reddit.com/search/?q={{{s}}}",
+    bang: "r",
+    searchUrl: "https://www.reddit.com/search/?q={{{s}}}",
   },
   {
-    t: "gh",
-    u: "https://github.com/search/?q={{{s}}}&type=repositories",
+    bang: "gh",
+    searchUrl: "https://github.com/search/?q={{{s}}}&type=repositories",
   },
   {
-    t: "npm",
-    u: "https://www.npmjs.com/search?q={{{s}}}"
+    bang: "npm",
+    searchUrl: "https://www.npmjs.com/search?q={{{s}}}"
+  },
+  {
+    bang: "gl",
+    searchUrl: "https://{{{h}}}/search?search={{{s}}}&scope=projects"
   }
 ];
