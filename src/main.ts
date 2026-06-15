@@ -87,7 +87,7 @@ function noSearchDefaultPageRender() {
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     const searchTerms = urlInput.value;
-    if (searchTerms){
+    if (searchTerms) {
       form.action = `https://search.helbling.uk?q=${searchTerms}`;
       form.submit();
     }
@@ -113,13 +113,24 @@ function getBangredirectUrl() {
   const cleanQuery = query.replace(/!\S+\s*/i, "").trim();
 
   // Allow for host to be customised
-  if (selectedBang.searchUrl.includes('{{{h}}}')){
+  if (selectedBang.searchUrl.includes('{{{host}}}')) {
     const host = localStorage.getItem(`${selectedBang.bang}-host`);
-    if (!host){
+    if (!host) {
       noSearchDefaultPageRender();
       return null;
     }
-    selectedBang.searchUrl = selectedBang.searchUrl.replace('{{{h}}}', host);
+    selectedBang.searchUrl = selectedBang.searchUrl.replace('{{{host}}}', host);
+  }
+
+  // Search within a specific gitlab group
+  if (selectedBang.searchUrl.includes('{{{gl-groupid}}}')) {
+    const groupId = localStorage.getItem(`${selectedBang.bang}-groupId`);
+
+    if (!groupId) {
+      selectedBang.searchUrl = selectedBang.searchUrl.replace('{{{gl-groupid}}}', '');
+    } else {
+      selectedBang.searchUrl = selectedBang.searchUrl.replace('{{{gl-groupid}}}', `&group_id=${groupId}`);
+    }
   }
 
   // https://www.google.com/search?q={{{s}}}

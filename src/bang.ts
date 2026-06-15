@@ -2,7 +2,7 @@ export const bangs = [
   {
     bang: "ddg",
     searchUrl: "https://duckduckgo.com/?q={{{s}}}",
-  },{
+  }, {
     bang: "ai",
     searchUrl: "https://www.t3.chat/new?q={{{s}}}",
   },
@@ -52,6 +52,17 @@ export const bangs = [
   },
   {
     bang: "gl",
-    searchUrl: "https://{{{h}}}/search?search={{{s}}}&scope=projects"
+    searchUrl: "https://{{{host}}}/search?search={{{s}}}&scope=projects{{{gl-groupid}}}"
+  }, {
+    bang: 'conf',
+    searchUrl: "https://{{{host}}}/wiki/search?text={{{s}}}"
+  },
+  {
+    bang: "ja",
+    searchUrl: "https://{{{host}}}/issues/?jql=textfields%20~%20%22{{{s}}}%2A%22"
+  },
+  {
+    bang: 'jaid',
+    searchUrl: "https://{{{host}}}/browse/{{{s}}}"
   }
 ];
