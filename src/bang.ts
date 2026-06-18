@@ -62,7 +62,7 @@ export const bangs = [
     searchUrl: "https://{{{host}}}/issues/?jql=textfields%20~%20%22{{{s}}}%2A%22"
   },
   {
-    bang: 'jaid',
+    bang: 'jira',
     searchUrl: "https://{{{host}}}/browse/{{{s}}}"
   }
 ];
