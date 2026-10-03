@@ -1,0 +1,19 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "unduck",
+  "compatibility_date": "2026-10-03",
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "single-page-application"
+  },
+  "routes": [
+    {
+      "pattern": "search.helbling.uk",
+      "custom_domain": true
+    },
+    {
+      "pattern": "www.search.helbling.uk",
+      "custom_domain": true
+    }
+  ],
+}
