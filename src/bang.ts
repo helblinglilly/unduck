@@ -28,7 +28,11 @@ export const bangs = [
   },
   {
     bang: "gt",
-    searchUrl: "https://translate.google.com/?sl=de&tl=en&text={{{s}}}&op=translate",
+    searchUrl: "https://translate.google.com/?sl=en&tl=de&text={{{s}}}&op=translate",
+  },
+  {
+    bang: "gf",
+    searchUrl: "https://translate.google.com/?sl=fr&tl=en&text={{{s}}}&op=translate",
   },
   {
     bang: "gn",
