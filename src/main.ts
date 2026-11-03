@@ -66,6 +66,14 @@ function noSearchDefaultPageRender() {
                 <td>Gitlab: Set gl-host in localstorage to hostname</td>
               </tr>
               <tr>
+                <td>!jira</td>
+                <td>Jira issue: Set jira-host in localstorage to hostname</td>
+              </tr>
+              <tr>
+                <td>!ja</td>
+                <td>Jira search: Set ja-host in localstorage to hostname</td>
+              </tr>
+              <tr>
                 <td>!npm</td>
                 <td>npm</td>
               </tr>
