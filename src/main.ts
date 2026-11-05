@@ -120,6 +120,10 @@ function getBangredirectUrl() {
   // Remove the first bang from the query
   const cleanQuery = query.replace(/!\S+\s*/i, "").trim();
 
+  // Navigate directly if the bang recognises the query shape
+  const remapped = selectedBang.remap?.(cleanQuery);
+  if (remapped) return remapped;
+
   // Allow for host to be customised
   if (selectedBang.searchUrl.includes('{{{host}}}')) {
     const host = localStorage.getItem(`${selectedBang.bang}-host`);

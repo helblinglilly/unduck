@@ -1,4 +1,12 @@
-export const bangs = [
+export type Bang = {
+  bang: string;
+  searchUrl: string;
+  // Optionally map a query directly to a URL, skipping the search.
+  // Return null to fall back to searchUrl.
+  remap?: (query: string) => string | null;
+};
+
+export const bangs: Bang[] = [
   {
     bang: "ddg",
     searchUrl: "https://duckduckgo.com/?q={{{s}}}",
@@ -49,6 +57,11 @@ export const bangs = [
   {
     bang: "gh",
     searchUrl: "https://github.com/search/?q={{{s}}}&type=repositories",
+    // owner/repo#123 -> issue or PR (GitHub redirects /issues/N to /pull/N for PRs)
+    remap: (query) => {
+      const m = query.match(/^([\w.-]+)\/([\w.-]+)#(\d+)$/);
+      return m ? `https://github.com/${m[1]}/${m[2]}/issues/${m[3]}` : null;
+    },
   },
   {
     bang: "npm",
